@@ -34,7 +34,7 @@ object NotificationHelper {
 
         val intent = Intent(context, mechanicInformation::class.java).apply {
             putExtra(AppConstants.MECHANICID,mechanicId )
-            putExtra(AppConstants.REQUESTID,requestId)
+            putExtra(AppConstants.MEKREQUESTID,requestId)
 
         }
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
