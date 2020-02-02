@@ -12,7 +12,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
-        android:name="com.mekpap.mekPap.UberRx"
+        android:name=".UberRx"
         android:allowBackup="true"
         android:icon="@drawable/applogo"
         android:label="@string/app_name"
@@ -21,53 +21,54 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:icon">
-        <activity android:name="com.mekpap.mekPap.mpesa.mpesaAcitivity"/>
-        <activity android:name="com.mekpap.mekPap.notification.mechanicInformation" />
+        <activity android:name=".payment.PaymentActivity"></activity>
+        <activity android:name=".mpesa.mpesaAcitivity" />
+        <activity android:name=".notification.mechanicInformation" />
 
         <receiver
-            android:name="com.mekpap.mekPap.customer.notificationReceiver"
+            android:name=".customer.notificationReceiver"
             android:enabled="true"
             android:exported="true" />
 
         <service
-            android:name="com.mekpap.mekPap.service.MyFirebaseMessagingService"
+            android:name=".service.MyFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
-        <activity android:name="com.mekpap.mekPap.support.DiscussionActivity">
+        <activity android:name=".support.DiscussionActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.mekpap.mekPap.navigation.menu" />
         </activity>
-        <activity android:name="com.mekpap.mekPap.support.Chat">
+        <activity android:name=".support.Chat">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.mekpap.mekPap.navigation.menu" />
         </activity>
-        <activity android:name="com.mekpap.mekPap.support.Users">
+        <activity android:name=".support.Users">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.mekpap.mekPap.navigation.menu" />
         </activity>
-        <activity android:name="com.mekpap.mekPap.support.Main2Activity">
+        <activity android:name=".support.Main2Activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.mekpap.mekPap.navigation.menu" />
         </activity>
-        <activity android:name="com.mekpap.mekPap.history.HistorySingleActivity">
+        <activity android:name=".history.HistorySingleActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.mekpap.mekPap.navigation.menu" />
         </activity>
-        <activity android:name="com.mekpap.mekPap.history.historyActivity">
+        <activity android:name=".history.historyActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.mekpap.mekPap.navigation.menu" />
         </activity>
-        <activity android:name="com.mekpap.mekPap.navigation.dashboard" />
+        <activity android:name=".navigation.dashboard" />
         <!--
         AIzaSyBU5qrfwybWfjovFYj4bp9FkzZ4upwZu6o
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -86,43 +87,43 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name="com.mekpap.mekPap.customer.MakeAppointment">
+        <activity android:name=".customer.MakeAppointment">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.mekpap.mekPap.navigation.menu" />
         </activity>
         <activity
-            android:name="com.mekpap.mekPap.navigation.menu"
+            android:name=".navigation.menu"
             android:label="@string/title_activity_menu"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="com.mekpap.mekPap.customer.customerProfile" />
-        <activity android:name="com.mekpap.mekPap.profile">
+        <activity android:name=".customer.customerProfile" />
+        <activity android:name=".profile">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.mekpap.mekPap.navigation.menu" />
         </activity>
         <activity
-            android:name="com.mekpap.mekPap.register"
+            android:name=".register"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.mekpap.mekPap.navigation.splashScreen"
+            android:name=".navigation.splashScreen"
             android:label="@string/title_activity_maps" />
-        <activity android:name="com.mekpap.mekPap.DriverMapActivity" />
-        <activity android:name="com.mekpap.mekPap.MapsActivity" />
-        <activity android:name="com.mekpap.mekPap.login">
+        <activity android:name=".DriverMapActivity" />
+        <activity android:name=".MapsActivity" />
+        <activity android:name=".login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.mekpap.mekPap.customer.customer_map">
+        <activity android:name=".customer.customer_map">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.mekpap.mekPap.navigation.menu" />
         </activity>
         <activity
-            android:name="com.mekpap.mekPap.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/title_activity_maps">
 
             <!--

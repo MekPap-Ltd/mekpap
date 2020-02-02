@@ -1,9 +1,11 @@
 package com.mekpap.mekPap.history;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.mekpap.mekPap.R;
+import com.mekpap.mekPap.payment.PaymentActivity;
 
 
 import org.jetbrains.annotations.NotNull;
@@ -33,6 +36,7 @@ public class historyActivity extends AppCompatActivity {
     private RecyclerView.Adapter mHistoryAdapter;
     private RecyclerView.LayoutManager mHistoryLayoutManager;
     private ProgressBar progressBar;
+    private Button payButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +63,12 @@ public class historyActivity extends AppCompatActivity {
 
 
         mHistoryAdapter.notifyDataSetChanged();
+
+        payButton = findViewById(R.id.payActivity);
+        payButton.setOnClickListener(v->{
+                Intent intent = new Intent(this, PaymentActivity.class);
+                startActivity(intent);
+        });
 
     }
 
